@@ -23,3 +23,15 @@ output/
 # Local-only dirs
 .flash/
 Huma-Huma/
+
+# Large data dirs (regenerate with scripts/)
+pubtabnet/
+checkpoints/
+"Training set for encoder binary classifier pipeline/"
+Training set for encoder binary classifier pipeline/
+
+# Generated data CSVs (tracked in data/ but not re-added if deleted)
+data/
+
+# Eval artifacts
+eval_unitable_results/
