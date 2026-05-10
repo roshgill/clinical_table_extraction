@@ -1,0 +1,9 @@
+filename,source,split,teds_score,label
+pubtabnet_train_PMC4682394_003_00.png,pubtabnet,train,0.6014,0
+pubtabnet_train_PMC5568346_007_00.png,pubtabnet,train,0.9018,-1
+pubtabnet_train_PMC4292575_004_00.png,pubtabnet,train,0.9805,1
+pubtabnet_train_PMC4235437_007_00.png,pubtabnet,train,0.5477,0
+pubtabnet_train_PMC4573298_004_00.png,pubtabnet,train,0.9376,-1
+pubtabnet_train_PMC4678204_005_00.png,pubtabnet,train,0.5728,0
+pubtabnet_train_PMC4200824_008_00.png,pubtabnet,train,0.6649,0
+pubtabnet_train_PMC3698163_007_00.png,pubtabnet,train,0.8998,-1
