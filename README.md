@@ -1,5 +1,5 @@
 ## Clinical Table Extraction Pipeline
-Built for [Qonic](https://www.linkedin.com/company/qoniq-ai/) | Supervised by Eliot Levitt, CTO
+Built for [Qonic](https://www.qoniq.com/our-solution/) | Supervised by Eliot Levitt, CTO
 
 Qonic provides AI powered medical affairs systems for pharmaceutical clients. Medical and bio personnel query a knowledge base of clinical documents to retrieve precise statistical data. Errors in that data can directly affect patient outcomes.
 
