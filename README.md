@@ -1,5 +1,5 @@
 ## Clinical Table Extraction Pipeline
-Built for [Qonic](https://www.linkedin.com/company/qoniq-ai/) | Supervised by Eliot Levitt, CTO (MIT)
+Built for [Qonic](https://www.linkedin.com/company/qoniq-ai/) | Supervised by Eliot Levitt, CTO
 
 Qonic provides AI powered medical affairs systems for pharmaceutical clients. Medical and bio personnel query a knowledge base of clinical documents to retrieve precise statistical data. Errors in that data can directly affect patient outcomes.
 
@@ -10,7 +10,7 @@ This pipeline replaces a markdown-based ingestion system that sent unverified, m
 
 ### What It Does
 
-Extracts tables from clinical PDF documents and routes them based on UniTable's own confidence in its output. Only tables the model is unambiguously certain about are stored for agent retrieval.
+Extracts tables from clinical PDF documents and routes them based on UniTable's own confidence in its output. Only tables where the model's decoder confidence exceeds threshold are stored for agent retrieval.
 
 ```
 PDF page
