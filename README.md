@@ -10,7 +10,7 @@ This pipeline replaces a markdown-based ingestion system that sent unverified, m
 
 ### What It Does
 
-Extracts tables from clinical PDF documents and routes them based on UniTable's own confidence in its output. Only tables where the model's decoder confidence exceeds threshold are stored for agent retrieval.
+Extracts tables from clinical PDF documents and routes them based on UniTable's own confidence in its output. Only tables where the model's decoder confidence exceeds threshold are stored for retrieval.
 
 ```
 PDF page
@@ -34,7 +34,7 @@ This signal requires zero additional training and outperforms a purpose-trained 
 
 At the production threshold of -0.000010: 100% precision, zero bad tables passed through. 7,705 low-quality extractions correctly rejected across 9,026 test tables.
 
-The threshold is deliberately conservative. This system serves medical teams. Coverage is secondary to correctness.
+The threshold is deliberately conservative. This system serves medical teams. **Correctness matters more than coverage.**
 
 
 ### Results
@@ -46,6 +46,15 @@ The threshold is deliberately conservative. This system serves medical teams. Co
 
 Full threshold sweep: notebooks/research/04_confidence_threshold_analysis.ipynb
 
+### Future Work
+
+This is research and validation work. The technique and threshold were established on 9,026 labeled tables from public benchmarks (ICDAR 2021 + PubTabNet val). The pipeline was handed off to the Qonic team for production integration and continued testing against their internal clinical document corpus.
+
+Likely next steps from the team:
+- Validation on Qonic's proprietary document set at production scale
+- Threshold re-tuning if the distribution shifts on domain-specific documents
+- Integration with the downstream LLM retrieval pipeline
+- Monitoring for confidence-score drift over time as new document types appear
 
 ### Repo Structure
 
