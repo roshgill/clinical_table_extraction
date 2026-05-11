@@ -1,4 +1,4 @@
-#!/Users/atharvajog/code/Huma Roshan/Table-Extraction-from-Medical-Documents/.venv/bin/python
+#!/Users/roshgill/Desktop/HumaAI/.venv/bin/python3
 """Extract pdf structure in XML format"""
 
 import logging

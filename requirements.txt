@@ -23,6 +23,7 @@ apted                        # shared/teds.py
 
 # ── data ────────────────────────────────────────────────────────────
 pandas
+scikit-learn
 
 # ── LLM clients ────────────────────────────────────────────────────
 google-genai                 # Gemini fallback in agents/unitable_agent.py

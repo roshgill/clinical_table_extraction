@@ -1,4 +1,4 @@
-#!/Users/atharvajog/code/Huma Roshan/Table-Extraction-from-Medical-Documents/.venv/bin/python
+#!/Users/roshgill/Desktop/HumaAI/.venv/bin/python3
 """A command line tool for extracting text and images from PDF and
 output it to plain text, html, xml or tags.
 """
