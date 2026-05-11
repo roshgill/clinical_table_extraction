@@ -14,8 +14,8 @@ Extracts tables from clinical PDF documents and routes them based on UniTable's 
 
 ```
 PDF page
-  -> [Table Transformer](https://github.com/microsoft/table-transformer) (Microsoft, trained on 1M+ tables) -- detect table regions
-  -> [UniTable](https://github.com/poloclub/unitable?tab=readme-ov-file) (Georgia Tech, SOTA on 4/5 TR benchmarks) -- extract HTML structure
+  -> Table Transformer (Microsoft, trained on 1M+ tables) -- detect table regions
+  -> UniTable (Georgia Tech, SOTA on 4/5 TR benchmarks) -- extract HTML structure
   -> Confidence filter (mean log prob of structure tokens)
        >= threshold  ->  parse into row/column cells, store for retrieval
        <  threshold  ->  route to human review
@@ -37,7 +37,7 @@ At the production threshold of -0.000010: 100% precision, zero bad tables passed
 The threshold is deliberately conservative. This system serves medical teams. Coverage is secondary to correctness.
 
 
-## Results
+### Results
 
 - ROC-AUC: 0.8368 on 9,026 labeled tables (ICDAR 2021 + PubTabNet val)
 - 100% precision at production threshold -- zero incorrect extractions stored
@@ -47,7 +47,7 @@ The threshold is deliberately conservative. This system serves medical teams. Co
 Full threshold sweep: notebooks/research/04_confidence_threshold_analysis.ipynb
 
 
-## Repo Structure
+### Repo Structure
 
 ```
 notebooks/research/    core findings (start here)
@@ -57,7 +57,7 @@ shared/                shared utilities
 archive/               all prior exploration and dead ends
 ```
 
-## Setup
+### Setup
 
 ```bash
 python -m venv venv && source venv/bin/activate
