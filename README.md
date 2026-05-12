@@ -14,8 +14,8 @@ Extracts tables from clinical PDF documents and routes them based on UniTable's 
 
 ```
 PDF page
-  -> Table Transformer (Microsoft, trained on 1M+ tables) -- detect table regions
-  -> UniTable (Georgia Tech, SOTA on 4/5 TR benchmarks) -- extract HTML structure
+  -> Table Transformer (Microsoft, trained on 1M+ tables) detect table regions
+  -> UniTable (Georgia Tech, SOTA on 4/5 TR benchmarks) extract HTML structure
   -> Confidence filter (mean log prob of structure tokens)
        >= threshold  ->  parse into row/column cells, store for retrieval
        <  threshold  ->  route to human review
@@ -34,24 +34,24 @@ This signal requires zero additional training and outperforms a purpose-trained 
 
 At the production threshold of -0.000010: 100% precision, zero bad tables passed through. 7,705 low-quality extractions correctly rejected across 9,026 test tables.
 
-The threshold is deliberately conservative. This system serves medical teams. **Correctness matters more than coverage.**
+The threshold is conservative on purpose. This system serves medical teams. **Correctness matters more than coverage.**
 
 
 ### Results
 
 - ROC-AUC: 0.8368 on 9,026 labeled tables (ICDAR 2021 + PubTabNet val)
-- 100% precision at production threshold -- zero incorrect extractions stored
+- 100% precision at production threshold
 - 7,705 bad tables rejected automatically
-- Trained visual classifier explored and abandoned -- encoder feature space insufficient for this task at ROC-AUC 0.58-0.66
+- Trained visual classifier explored and abandoned (ROC-AUC 0.58-0.66)
 
 Full threshold sweep: notebooks/research/04_confidence_threshold_analysis.ipynb
 
 ### Future Work
 
-This is research and validation work. The technique and threshold were established on 9,026 labeled tables from public benchmarks (ICDAR 2021 + PubTabNet val). The pipeline was handed off to the Qonic team for production integration and continued testing against their internal clinical document corpus.
+This is research and validation work. The technique and threshold were established on 9,026 labeled tables from public benchmarks (ICDAR 2021 + PubTabNet val). The pipeline was handed off to the Qonic team for production integration and continued testing against their own documents.
 
 Likely next steps from the team:
-- Validation on Qonic's proprietary document set at production scale
+- Validation on Qonic's document set at production scale
 - Threshold re-tuning if the distribution shifts on domain-specific documents
 - Integration with the downstream LLM retrieval pipeline
 - Monitoring for confidence-score drift over time as new document types appear
