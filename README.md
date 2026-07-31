@@ -1,7 +1,7 @@
 ## Clinical Table Extraction Pipeline
 Built for [HumaAI](https://www.qoniq.com/our-solution/) | Supervised by Eliot Levitt, CTO
 
-Qonic provides AI powered medical affairs systems for pharmaceutical clients. Medical and bio personnel query a knowledge base of clinical documents to retrieve precise statistical data. Errors in that data can directly affect patient outcomes.
+HumaAI provides AI powered medical affairs systems for pharmaceutical clients. Medical and bio personnel query a knowledge base of clinical documents to retrieve precise statistical data. Errors in that data can directly affect patient outcomes.
 
 This pipeline replaces a markdown-based ingestion system that sent unverified, malformed table data to downstream LLMs, causing confident but incorrect responses.
 
